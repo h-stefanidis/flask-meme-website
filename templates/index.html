@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A website to gather some memes!</title>
+    <meta http-equiv="refresh" content="30">
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+        }
+        body {
+            padding: 20px;
+        }
+        .content {
+            text-align: center;
+            max-width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            background: white;
+            padding: 20px;
+        }
+        img {
+            max-width: 100%;
+            max-height: calc(100vh - 150px);
+            height: auto;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        <h1>A website to gather some memes!</h1>
+        <p>Here is your meme! This page refreshes every 30 seconds!</p>
+        {% if meme_pic %}
+        <img src="{{ meme_pic }}" alt="Meme">
+        <p>Source: <strong>{{ subreddit }}</strong></p>
+        {% else %}
+        <p>No meme available at the moment. Please refresh the page or check back later.</p>
+        {% endif %}
+    </div>
+</body>
+</html>
